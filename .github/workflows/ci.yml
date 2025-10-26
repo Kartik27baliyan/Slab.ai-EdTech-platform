@@ -19,6 +19,9 @@ jobs:
         cache: 'npm'
         cache-dependency-path: backend/package-lock.json
         
+    - name: Generate package-lock
+      run: cd backend && npm install --package-lock-only
+      
     - name: Install backend dependencies
       run: cd backend && npm ci
       
@@ -37,6 +40,9 @@ jobs:
         cache: 'npm'
         cache-dependency-path: frontend/package-lock.json
         
+    - name: Generate package-lock
+      run: cd frontend && npm install --package-lock-only
+      
     - name: Install frontend dependencies
       run: cd frontend && npm ci
       
@@ -47,6 +53,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Generate package-lock for backend
+      run: cd backend && npm install --package-lock-only
+      
+    - name: Generate package-lock for frontend
+      run: cd frontend && npm install --package-lock-only
     
     - name: Run security audit
       run: |
