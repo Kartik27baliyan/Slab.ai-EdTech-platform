@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: slab-ai-frontend:latest
+        image: 975050024946.dkr.ecr.ca-central-1.amazonaws.com/slab-ai-dev-dev-frontend:latest
         ports:
         - containerPort: 80
         livenessProbe:

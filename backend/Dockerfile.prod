@@ -1,19 +1,11 @@
-FROM node:18-alpine as builder
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY . .
-
 FROM node:18-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/src ./src
+COPY package*.json ./
+RUN npm install --only=production
+
+COPY src/ ./src/
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S slab-ai -u 1001
