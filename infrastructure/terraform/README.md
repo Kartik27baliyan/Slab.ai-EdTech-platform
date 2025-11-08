@@ -22,7 +22,7 @@ text
 ## Quick Start
 
 ### 1. Initialize Terraform
-```bash
+
 cd infrastructure/terraform/environments/dev
 
 # Initialize Terraform
@@ -34,7 +34,6 @@ terraform plan
 # Apply the infrastructure
 terraform apply
 2. Configure kubectl for EKS
-Bash
 
 # Update kubeconfig
 aws eks update-kubeconfig --region ap-south-1 --name slab-ai-dev
@@ -42,7 +41,6 @@ aws eks update-kubeconfig --region ap-south-1 --name slab-ai-dev
 # Verify cluster access
 kubectl get nodes
 3. Deploy Application
-Bash
 
 # Apply Kubernetes manifests
 kubectl apply -k ../../kubernetes
@@ -50,7 +48,7 @@ kubectl apply -k ../../kubernetes
 # Check deployment status
 kubectl get all -n slab-ai
 Module Structure
-text
+
 
 modules/
 ├── vpc/          # VPC, subnets, routing
@@ -86,9 +84,8 @@ Common Issues
 Terraform state lock: Check DynamoDB table
 EKS node group failing: Check IAM roles and subnets
 CloudFront certificate: Must be in us-east-1 region
-Useful Commands
-Bash
 
+Useful Commands
 # Destroy infrastructure
 terraform destroy
 
