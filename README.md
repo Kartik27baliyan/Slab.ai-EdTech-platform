@@ -15,13 +15,9 @@ CloudFront → S3 (Static) → ALB → EKS Cluster → MongoDB Atlas
 CDN Web Assets Load Kubernetes Database
 (React App) Balancer (Node.js API)
 
-text
-
-
-## 🚀 DevOps Implementation
+🚀 DevOps Implementation
 
 ### Infrastructure as Code
-```bash
 cd infrastructure/
 terraform init
 terraform plan
@@ -29,8 +25,6 @@ terraform apply
 ✅ Completed: VPC, EKS, ECR, S3, CloudFront, Route53, WAF
 
 CI/CD Automation
-YAML
-
 GitHub Actions Pipeline:
 - Automated Docker builds on push
 - Security scanning & vulnerability checks
@@ -48,8 +42,6 @@ CloudWatch for AWS services
 Application Load Balancer access logs
 SLO dashboards for business metrics
 📁 Project Structure
-text
-
 slab-ai-v2/
 ├── .github/workflows/     # CI/CD pipelines
 ├── infrastructure/        # Terraform code
@@ -59,7 +51,6 @@ slab-ai-v2/
 └── kubernetes/           # K8s manifests
 🔧 Quick Start
 Local Development
-Bash
 
 # Start all services
 docker-compose up --build
@@ -68,7 +59,6 @@ docker-compose up --build
 # Frontend: http://localhost:3000
 # Backend API: http://localhost:3001/health
 Production Deployment
-Bash
 
 # 1. Infrastructure
 cd infrastructure && terraform apply
