@@ -1,0 +1,55 @@
+name: Deploy to EKS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  AWS_REGION: ca-central-1
+  ECR_REGISTRY: 975050024946.dkr.ecr.ca-central-1.amazonaws.com
+  EKS_CLUSTER: slab-ai-dev-dev
+  NAMESPACE: slab-ai
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build and push backend image
+      run: |
+        cd backend
+        docker build -t $ECR_REGISTRY/slab-ai-backend:${GITHUB_SHA} .
+        docker push $ECR_REGISTRY/slab-ai-backend:${GITHUB_SHA}
+
+    - name: Build and push frontend image  
+      run: |
+        cd frontend
+        docker build -t $ECR_REGISTRY/slab-ai-frontend:${GITHUB_SHA} .
+        docker push $ECR_REGISTRY/slab-ai-frontend:${GITHUB_SHA}
+
+    - name: Update kubeconfig
+      run: |
+        aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER
+
+    - name: Deploy to EKS
+      run: |
+        kubectl set image deployment/slab-ai-backend -n $NAMESPACE \
+          app=$ECR_REGISTRY/slab-ai-backend:${GITHUB_SHA}
+        kubectl set image deployment/slab-ai-frontend -n $NAMESPACE \
+          app=$ECR_REGISTRY/slab-ai-frontend:${GITHUB_SHA}
