@@ -82,15 +82,20 @@ GET /api/leads - List leads
 POST /api/courses - Create courses
 POST /api/auth/register - User registration
 POST /api/payments/create-intent - Payment processing
+
 🎯 Business Metrics
+
 Funnel Health: Visit → Lead conversion rate
 Reliability: ≥99.9% monthly uptime
 Performance: API p95 < 300ms, TTFB < 200ms
 Delivery: Weekly releases with <10% change failure rate
+
 🔍 Evidence of Implementation
 Terraform State: Proven infrastructure deployment (VPC, EKS, networking)
 CI/CD Pipeline: Automated build and deployment process
 Security Documentation: SSM secrets, IRSA roles, network security
 Architecture Diagrams: Multi-AZ production design
-GitHub Repository: https://github.com/Kartik27baliyan/Slab.ai-EdTech-platform-
-Submission Ready: Complete DevOps implementation documented and verified
+
+## Repository Link:
+GitHub Repository: https://github.com/Kartik27baliyan/Slab.ai-EdTech-platform
+
