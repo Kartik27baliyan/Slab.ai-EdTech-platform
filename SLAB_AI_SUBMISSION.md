@@ -13,7 +13,6 @@ This project demonstrates a production-ready deployment of SLAB.AI, a lead-to-le
 - **Resource Tagging**: Proper AWS resource management and cost tracking
 
 #### 2. CI/CD Automation (READY)
-```yaml
 GitHub Actions Pipeline:
 - Automated Docker builds on push
 - Security scanning with Trivy
