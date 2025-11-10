@@ -13,12 +13,13 @@ This project demonstrates a production-ready deployment of SLAB.AI, a lead-to-le
 - **Resource Tagging**: Proper AWS resource management and cost tracking
 
 #### 2. CI/CD Automation (READY)
+```
 GitHub Actions Pipeline:
 - Automated Docker builds on push
 - Security scanning with Trivy
 - ECR image push with versioning
 - Kubernetes deployment automation
-- Environment-specific deployments
+- Environment-specific deployments 
 3. Security Implementation
 SSM Secrets Manager: Secure credential storage
 IRSA (IAM Roles for Service Accounts): Least privilege access
@@ -30,11 +31,11 @@ EKS Kubernetes: Managed node groups, auto-scaling
 Helm Charts: Cluster add-ons and application deployment
 Technical Architecture
 Infrastructure Stack
-text
 
 CloudFront (CDN) → S3 (Static Assets) → ALB → EKS Cluster → MongoDB Atlas
                       ↑
                  Route 53 (DNS)
+ ```                
 Kubernetes Services
 Backend API: Node.js microservices
 Frontend: React application
