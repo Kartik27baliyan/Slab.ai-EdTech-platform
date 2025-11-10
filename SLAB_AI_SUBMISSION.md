@@ -1,5 +1,5 @@
 # SLAB.AI - EdTech Platform Deployment
-## Complete DevOps Implementation
+Complete DevOps Implementation
 
 ### Executive Summary
 This project demonstrates a production-ready deployment of SLAB.AI, a lead-to-learning EdTech platform, using industry-standard DevOps practices. Despite learner account limitations (auto-deletion of resources), we have implemented and documented a complete enterprise-grade solution.
@@ -20,6 +20,7 @@ GitHub Actions Pipeline:
 - ECR image push with versioning
 - Kubernetes deployment automation
 - Environment-specific deployments 
+```
 3. Security Implementation
 SSM Secrets Manager: Secure credential storage
 IRSA (IAM Roles for Service Accounts): Least privilege access
@@ -35,7 +36,7 @@ Infrastructure Stack
 CloudFront (CDN) → S3 (Static Assets) → ALB → EKS Cluster → MongoDB Atlas
                       ↑
                  Route 53 (DNS)
- ```                
+               
 Kubernetes Services
 Backend API: Node.js microservices
 Frontend: React application
@@ -54,12 +55,19 @@ Security & Compliance
 PII protection through encryption
 Secure payment processing
 Auditable access controls
+
 Deliverables Completed
+
 ✅ Phase 2: Terraform Infrastructure
+
 ✅ Phase 3: Cluster Add-ons
+
 ✅ Phase 4: CI/CD Pipeline
+
 ✅ Phase 5: Security Implementation
+
 ✅ Phase 6: Containerization
+
 ✅ Phase 7: Documentation & Runbooks
 
 Learner Account Limitations
