@@ -36,7 +36,7 @@ terraform apply
 2. Configure kubectl for EKS
 
 # Update kubeconfig
-aws eks update-kubeconfig --region ap-south-1 --name slab-ai-dev
+aws eks update-kubeconfig --region ca-central-1 --name slab-ai-dev
 
 # Verify cluster access
 kubectl get nodes
