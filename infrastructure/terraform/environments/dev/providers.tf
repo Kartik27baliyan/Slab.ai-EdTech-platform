@@ -17,10 +17,10 @@ provider "aws" {
   }
 }
 
-# Additional provider for CloudFront certificates (must be in us-east-1)
+# Additional provider for CloudFront certificates (must be in ca_central_1)
 provider "aws" {
-  alias  = "us_east_1"
-  region = "us-east-1"
+  alias  = "ca_central_1"
+  region = "ca_central_1"
   
   default_tags {
     tags = local.common_tags
