@@ -87,17 +87,18 @@ slab-ai-v2/
 ├── docs/                    # Architecture & runbooks
 └── docker-compose.yml       # Local development
 
-🔍 #Evidence of Implementation
+# 🔍 Evidence of Implementation
 ✅ Terraform State: Infrastructure deployed (EKS, VPC, ECR, S3)
 ✅ Kubernetes: Applications running in production cluster
 ✅ LoadBalancer: External access configured and working
 ✅ Service Discovery: Internal networking operational
 ✅ Health Monitoring: Readiness/liveness probes implemented
 
-🌐 #Production URLs
+# 🌐 Production URLs
 Frontend: http://a971d99b389ac484dbcc14e4e9156dae-119493265.ca-central-1.elb.amazonaws.com
 Backend APIs: Internal service slab-ai-backend:80
-📞 Support
+
+# 📞 Support
 For deployment issues, refer to the complete deployment documentation in /docs/deployment.md
 
 Repository: https://github.com/Kartik27baliyan/Slab.ai-EdTech-platform
