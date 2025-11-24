@@ -14,6 +14,7 @@ CloudFront → ALB → EKS Cluster → MongoDB Atlas
 ↑
 Frontend (React) + Backend (Node.js)
 Nginx Proxy → Backend API
+
 ## 🚀 DevOps Implementation
 
 ### ✅ Infrastructure as Code
@@ -21,8 +22,11 @@ cd infrastructure/terraform/
 terraform init
 terraform plan
 terraform apply
+
 ✅ Completed: VPC, EKS Cluster, ECR Repositories, S3 Buckets, Load Balancers
+
 ✅ Kubernetes Deployment
+
 # Cluster access
 aws eks update-kubeconfig --region ca-central-1 --name slab-ai-dev-dev
 # Application deployment
@@ -35,28 +39,32 @@ Backend APIs: Leads, Courses, Auth, Payments fully operational
 Frontend: Accessible via LoadBalancer with nginx proxy
 Services: Internal service discovery working
 Health Checks: All pods running with zero restarts
-🛡️ Security Features
+
+## 🛡️ Security Features
 Input validation with express-validator
 JWT authentication with secure token storage
 Helmet security headers
 CORS configuration
 Private networking with service isolation
 Health checks and readiness probes
-📊 API Endpoints (✅ VERIFIED WORKING)
+
+## 📊 API Endpoints (✅ VERIFIED WORKING)
 GET /health - System health
 POST /api/leads - Capture leads
 GET /api/leads - List leads  
 GET /api/courses - List courses
 POST /api/auth/register - User registration
 POST /api/payments/create-intent - Payment processing
-🎯 Deployment Success Metrics
+
+## 🎯 Deployment Success Metrics
 ✅ Infrastructure: EKS cluster with 2 worker nodes
 ✅ Applications: Backend + Frontend deployed successfully
 ✅ Networking: LoadBalancer provisioned with external access
 ✅ Reliability: All pods healthy, zero crash loops
 ✅ Scalability: Multiple replicas with rolling updates
 ✅ API Connectivity: Frontend → Nginx Proxy → Backend working perfectly
-🔧 Quick Start
+
+## 🔧 Quick Start
 Local Development
 # Start all services
 docker-compose up --build
