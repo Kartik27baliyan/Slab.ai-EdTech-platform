@@ -39,3 +39,6 @@ spec:
             name: slab-ai-frontend
             port:
               number: 80
+
+
+#This code was provided by Prashant Dey to overcome ingress ELB issue! 
