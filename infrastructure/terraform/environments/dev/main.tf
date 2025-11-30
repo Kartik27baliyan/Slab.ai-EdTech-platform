@@ -1,6 +1,5 @@
 # SLAB.AI Dev Environment
 # Integrates all infrastructure modules
-
 module "vpc" {
   source = "../../modules/vpc"
 
@@ -10,7 +9,6 @@ module "vpc" {
   enable_nat_gateway  = var.enable_nat_gateway
   tags                = local.common_tags
 }
-
 module "eks" {
   source = "../../modules/eks"
 
@@ -23,7 +21,6 @@ module "eks" {
   max_size        = 3
   tags            = local.common_tags
 }
-
 module "s3" {
   source = "../../modules/s3"
 
@@ -37,7 +34,6 @@ module "ecr" {
   name_prefix = "${local.name_prefix}-dev"
   tags        = local.common_tags
 }
-
 # CloudFront commented out due to learner account restrictions
 # module "cloudfront" {
 #   source = "../../modules/cloudfront"
@@ -46,9 +42,7 @@ module "ecr" {
 #   s3_bucket_domain_name   = module.s3.web_bucket_domain_name
 #   tags                    = local.common_tags
 # }
-
 # Additional resources for the dev environment
-
 # ECR Repository for MongoDB (if needed)
 resource "aws_ecr_repository" "mongodb" {
   name = "${local.name_prefix}-dev-mongodb"
