@@ -1,4 +1,4 @@
-# 🚀 SLAB.AI 2.0 - Lead to Learning Platform
+#  SLAB.AI 2.0 - Lead to Learning Platform
 
 A modern, cloud-native EdTech platform with complete DevOps implementation - from infrastructure automation to production deployment.
 
